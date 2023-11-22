@@ -1,7 +1,7 @@
 {
     "results": [
         {
-            "id": 1,
+            "id": "1",
             "name": "Nike",
             "photo": "https://i.postimg.cc/JhXLH1sb/Nike-Logo-Decal-Sticker-NIKE-LOGO-Thriftysigns.jpg",
             "founded": "1964",
@@ -10,7 +10,7 @@
             "country": "United States"
         },
         {
-            "id": 2,
+            "id": "2",
             "name": "Adidas",
             "photo": "https://i.postimg.cc/7Lr22ZB4/ADIDAS-LOGO.jpg",
             "founded": "1924",
@@ -19,7 +19,7 @@
             "country": "Germany"
         },
         {
-            "id": 3,
+            "id": "3",
             "name": "Puma",
             "photo": "https://i.postimg.cc/6394M1J1/Puma-joins-hands-with-NGO-Parcham-to-fuel-girls-football-dreams.jpg",
             "founded": "1948",
@@ -28,7 +28,7 @@
             "country": "Germany"
         },
         {
-            "id": 4,
+            "id": "4",
             "name": "Reebok",
             "photo": "https://i.postimg.cc/bNKG7vfn/Reebok-Logo-PNG-Logo-Vector-Downloads-SVG-EPS.jpg",
             "founded": "1958",
@@ -37,7 +37,7 @@
             "country": "United States"
         },
         {
-            "id": 5,
+            "id": "5",
             "name": "Gucci",
             "photo": "https://i.postimg.cc/QCctsQ3W/Gucci-SVG-PNG-Download.jpg",
             "founded": "1921",
@@ -46,7 +46,7 @@
             "country": "Italy"
         },
         {
-            "id": 6,
+            "id": "6",
             "name": "Vans",
             "photo": "https://i.postimg.cc/RVQFDLdk/News.jpg",
             "founded": "1966",
@@ -55,7 +55,7 @@
             "country": "United States"
         },
         {
-            "id": 7,
+            "id": "7",
             "name": "Converse",
             "photo": "https://i.postimg.cc/C5phvRqM/Converse-Logo-Vector-Download.jpg",
             "founded": "1908",
@@ -64,7 +64,7 @@
             "country": "United States"
         },
         {
-            "id": 8,
+            "id": "8",
             "name": "New Balance",
             "photo": "https://i.postimg.cc/3rgh9JJN/Here-s-How-New-Balance-Can-Compete-with-Nike.jpg",
             "founded": "1906",
@@ -73,7 +73,7 @@
             "country": "United States"
         },
         {
-            "id": 9,
+            "id": "9",
             "name": "Balenciaga",
             "photo": "https://i.postimg.cc/ydsMb0NN/Balenciaga-Logo.jpg",
             "founded": "1919",
@@ -82,7 +82,7 @@
             "country": "Spain"
         },
         {
-            "id": 10,
+            "id": "10",
             "name": "Timberland",
             "photo": "https://i.postimg.cc/Kzv4PkB6/9390dcd7-fea4-4bb4-9e5a-ce14e0f47e53.jpg",
             "founded": "1952",
