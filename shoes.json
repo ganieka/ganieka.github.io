@@ -3,92 +3,92 @@
         {
             "id": "1",
             "name": "Nike",
-            "photo": "https://i.postimg.cc/JhXLH1sb/Nike-Logo-Decal-Sticker-NIKE-LOGO-Thriftysigns.jpg",
+            "Photo": "https://i.postimg.cc/JhXLH1sb/Nike-Logo-Decal-Sticker-NIKE-LOGO-Thriftysigns.jpg",
             "founded": "1964",
-            "net_worth_billion_usd": "34.8",
-            "owner": "Phil Knight",
-            "country": "United States"
+            "Net_worth_billion_usd": "34.8",
+            "Owner": "Phil Knight",
+            "Country": "United States"
         },
         {
             "id": "2",
             "name": "Adidas",
-            "photo": "https://i.postimg.cc/7Lr22ZB4/ADIDAS-LOGO.jpg",
+            "Photo": "https://i.postimg.cc/7Lr22ZB4/ADIDAS-LOGO.jpg",
             "founded": "1924",
-            "net_worth_billion_usd": "19.8",
-            "owner": "Igor Landau",
-            "country": "Germany"
+            "Net_worth_billion_usd": "19.8",
+            "Owner": "Igor Landau",
+            "Country": "Germany"
         },
         {
             "id": "3",
             "name": "Puma",
-            "photo": "https://i.postimg.cc/6394M1J1/Puma-joins-hands-with-NGO-Parcham-to-fuel-girls-football-dreams.jpg",
+            "Photo": "https://i.postimg.cc/6394M1J1/Puma-joins-hands-with-NGO-Parcham-to-fuel-girls-football-dreams.jpg",
             "founded": "1948",
-            "net_worth_billion_usd": "4.6",
-            "owner": "Kering Group",
-            "country": "Germany"
+            "Net_worth_billion_usd": "4.6",
+            "Owner": "Kering Group",
+            "Country": "Germany"
         },
         {
             "id": "4",
             "name": "Reebok",
-            "photo": "https://i.postimg.cc/bNKG7vfn/Reebok-Logo-PNG-Logo-Vector-Downloads-SVG-EPS.jpg",
+            "Photo": "https://i.postimg.cc/bNKG7vfn/Reebok-Logo-PNG-Logo-Vector-Downloads-SVG-EPS.jpg",
             "founded": "1958",
-            "net_worth_billion_usd": "2.1",
-            "owner": "Authentic Brands Group",
-            "country": "United States"
+            "Net_worth_billion_usd": "2.1",
+            "Owner": "Authentic Brands Group",
+            "Country": "United States"
         },
         {
             "id": "5",
             "name": "Gucci",
-            "photo": "https://i.postimg.cc/QCctsQ3W/Gucci-SVG-PNG-Download.jpg",
+            "Photo": "https://i.postimg.cc/QCctsQ3W/Gucci-SVG-PNG-Download.jpg",
             "founded": "1921",
-            "net_worth_billion_usd": "17.6",
-            "owner": "Kering Group",
-            "country": "Italy"
+            "Net_worth_billion_usd": "17.6",
+            "Owner": "Kering Group",
+            "Country": "Italy"
         },
         {
             "id": "6",
             "name": "Vans",
-            "photo": "https://i.postimg.cc/RVQFDLdk/News.jpg",
+            "Photo": "https://i.postimg.cc/RVQFDLdk/News.jpg",
             "founded": "1966",
-            "net_worth_billion_usd": "3.8",
-            "owner": "VF Corporation",
-            "country": "United States"
+            "Net_worth_billion_usd": "3.8",
+            "Owner": "VF Corporation",
+            "Country": "United States"
         },
         {
             "id": "7",
             "name": "Converse",
-            "photo": "https://i.postimg.cc/C5phvRqM/Converse-Logo-Vector-Download.jpg",
+            "Photo": "https://i.postimg.cc/C5phvRqM/Converse-Logo-Vector-Download.jpg",
             "founded": "1908",
-            "net_worth_billion_usd": "2.0",
-            "owner": "Nike, Inc.",
-            "country": "United States"
+            "Net_worth_billion_usd": "2.0",
+            "Owner": "Nike, Inc.",
+            "Country": "United States"
         },
         {
             "id": "8",
             "name": "New Balance",
-            "photo": "https://i.postimg.cc/3rgh9JJN/Here-s-How-New-Balance-Can-Compete-with-Nike.jpg",
+            "Photo": "https://i.postimg.cc/3rgh9JJN/Here-s-How-New-Balance-Can-Compete-with-Nike.jpg",
             "founded": "1906",
-            "net_worth_billion_usd": "4.0",
-            "owner": "Jim Davis",
-            "country": "United States"
+            "Net_worth_billion_usd": "4.0",
+            "Owner": "Jim Davis",
+            "Country": "United States"
         },
         {
             "id": "9",
             "name": "Balenciaga",
-            "photo": "https://i.postimg.cc/ydsMb0NN/Balenciaga-Logo.jpg",
+            "Photo": "https://i.postimg.cc/ydsMb0NN/Balenciaga-Logo.jpg",
             "founded": "1919",
-            "net_worth_billion_usd": "9.8",
-            "owner": "Kering Group",
-            "country": "Spain"
+            "Net_worth_billion_usd": "9.8",
+            "Owner": "Kering Group",
+            "Country": "Spain"
         },
         {
             "id": "10",
             "name": "Timberland",
-            "photo": "https://i.postimg.cc/Kzv4PkB6/9390dcd7-fea4-4bb4-9e5a-ce14e0f47e53.jpg",
+            "Photo": "https://i.postimg.cc/Kzv4PkB6/9390dcd7-fea4-4bb4-9e5a-ce14e0f47e53.jpg",
             "founded": "1952",
-            "net_worth_billion_usd": "3.2",
-            "owner": "VF Corporation",
-            "country": "United States"
+            "Net_worth_billion_usd": "3.2",
+            "Owner": "VF Corporation",
+            "Country": "United States"
         }
     ]
 }
