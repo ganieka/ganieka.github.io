@@ -39,9 +39,9 @@
   <section id="skills">
     <div class="container">
       <h2>Skills</h2>
-      <ul class="skills-list" id="skillsList">
-        <!-- Skills loaded from projects.json -->
-      </ul>
+      <div id="skillsContainer" class="skills-container">
+        <!-- Skills grouped by category loaded from projects.json -->
+      </div>
     </div>
   </section>
 
@@ -58,8 +58,8 @@
           <option value="backend">Backend</option>
         </select>
 
-        <label for="skillFilter">Skill:</label>
-        <select id="skillFilter">
+        <label for="skillFilter">Skills:</label>
+        <select id="skillFilter" multiple>
           <option value="">All Skills</option>
         </select>
       </div>
@@ -69,6 +69,33 @@
       </div>
     </div>
   </section>
+
+  <!-- Project Details Modal -->
+  <div id="projectModal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <div class="modal-body">
+        <div class="modal-image-section">
+          <button class="carousel-btn carousel-prev" id="prevBtn">‹</button>
+          <img id="modalImage" src="" alt="Project Screenshot" class="modal-image">
+          <button class="carousel-btn carousel-next" id="nextBtn">›</button>
+          <div class="image-counter">
+            <span id="currentImage">1</span> / <span id="totalImages">1</span>
+          </div>
+        </div>
+        <div class="modal-info-section">
+          <h2 id="modalTitle"></h2>
+          <span id="modalPosition" class="modal-position-badge"></span>
+          <div id="modalSkills" class="modal-skills"></div>
+          <p id="modalDescription" class="modal-description"></p>
+          <div class="modal-actions">
+            <a id="modalGithubLink" href="" target="_blank" class="btn btn-primary">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Contact -->
   <section id="contact">

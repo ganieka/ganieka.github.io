@@ -1,38 +1,130 @@
 $(document).ready(function() {
   let allProjects = [];
-  let allSkills = [];
+  let allSkillsFlat = [];
+  let currentImageIndex = 0;
+  let currentProjectImages = [];
 
-  const $skillsList = $('#skillsList');
+  const $skillsContainer = $('#skillsContainer');
   const $projectsGrid = $('#projectsGrid');
   const $positionFilter = $('#positionFilter');
   const $skillFilter = $('#skillFilter');
+  const $modal = $('#projectModal');
+  const $modalOverlay = $('.modal-overlay');
+  const $modalClose = $('.modal-close');
+  const $prevBtn = $('#prevBtn');
+  const $nextBtn = $('#nextBtn');
+  const $modalImage = $('#modalImage');
+  const $currentImage = $('#currentImage');
+  const $totalImages = $('#totalImages');
+  const $modalTitle = $('#modalTitle');
+  const $modalPosition = $('#modalPosition');
+  const $modalSkills = $('#modalSkills');
+  const $modalDescription = $('#modalDescription');
+  const $modalGithubLink = $('#modalGithubLink');
 
   function init(data) {
     allProjects = data.projects;
-    allSkills = Array.from(new Set(data.skills));
-
-    renderSkills();
-    populateSkillFilter();
+    
+    // Flatten skills for filter
+    flattenSkills(data.skills);
+    
+    renderSkillsSection(data.skills);
+    populateSkillFilter(data.skills);
     renderProjects(allProjects);
 
-    $positionFilter.on('change', filterProjects);
-    $skillFilter.on('change', filterProjects);
+    setupEventListeners();
   }
 
-  function renderSkills() {
-    $skillsList.empty();
-    allSkills.forEach(skill => {
-      $skillsList.append(`<li>${skill}</li>`);
-    });
+  function flattenSkills(skillsObj) {
+    allSkillsFlat = [];
+    for (const category in skillsObj) {
+      const categoryObj = skillsObj[category];
+      for (const subcategory in categoryObj) {
+        const items = categoryObj[subcategory];
+        if (Array.isArray(items)) {
+          allSkillsFlat.push(...items);
+        } else {
+          for (const level in items) {
+            allSkillsFlat.push(...items[level]);
+          }
+        }
+      }
+    }
+    allSkillsFlat = [...new Set(allSkillsFlat)];
   }
 
-  function populateSkillFilter() {
-    const skillSet = new Set(allProjects.flatMap(project => project.skills));
-    Array.from(skillSet)
-      .sort()
-      .forEach(skill => {
-        $skillFilter.append(`<option value="${skill}">${skill}</option>`);
-      });
+  function renderSkillsSection(skillsObj) {
+    $skillsContainer.empty();
+    
+    for (const category in skillsObj) {
+      const categoryObj = skillsObj[category];
+      const $categoryDiv = $(`<div class="skill-category"></div>`);
+      const $categoryTitle = $(`<h3 class="skill-category-title">${category}</h3>`);
+      $categoryDiv.append($categoryTitle);
+
+      for (const subcategory in categoryObj) {
+        const items = categoryObj[subcategory];
+        const $subcategoryDiv = $(`<div class="skill-subcategory"></div>`);
+        const $subcategoryTitle = $(`<h4 class="skill-subcategory-title">${subcategory}</h4>`);
+        $subcategoryDiv.append($subcategoryTitle);
+
+        if (Array.isArray(items)) {
+          // Direct array of skills
+          const $skillsList = $(`<ul class="skill-items"></ul>`);
+          items.forEach(skill => {
+            $skillsList.append(`<li>${skill}</li>`);
+          });
+          $subcategoryDiv.append($skillsList);
+        } else {
+          // Object with proficiency levels
+          for (const level in items) {
+            const $levelDiv = $(`<div class="skill-level"></div>`);
+            const $levelLabel = $(`<span class="skill-level-label">${level}:</span>`);
+            const $skillsList = $(`<ul class="skill-items"></ul>`);
+            
+            items[level].forEach(skill => {
+              $skillsList.append(`<li>${skill}</li>`);
+            });
+            
+            $levelDiv.append($levelLabel);
+            $levelDiv.append($skillsList);
+            $subcategoryDiv.append($levelDiv);
+          }
+        }
+
+        $categoryDiv.append($subcategoryDiv);
+      }
+
+      $skillsContainer.append($categoryDiv);
+    }
+  }
+
+  function populateSkillFilter(skillsObj) {
+    $skillFilter.find('optgroup').remove();
+    
+    for (const category in skillsObj) {
+      const categoryObj = skillsObj[category];
+      const $optgroup = $(`<optgroup label="${category}"></optgroup>`);
+
+      for (const subcategory in categoryObj) {
+        const items = categoryObj[subcategory];
+        let skills = [];
+
+        if (Array.isArray(items)) {
+          skills = items;
+        } else {
+          for (const level in items) {
+            skills.push(...items[level]);
+          }
+        }
+
+        skills.forEach(skill => {
+          $optgroup.append(`<option value="${skill}">${skill}</option>`);
+        });
+      }
+
+      $skillFilter.append($optgroup);
+    }
   }
 
   function renderProjects(projects) {
@@ -48,12 +140,8 @@ $(document).ready(function() {
         .map(skill => `<span class="skill-badge">${skill}</span>`)
         .join(' ');
 
-      const demoLink = project.demo
-        ? `<a href="${project.demo}" target="_blank">View Demo</a>`
-        : '';
-
       $projectsGrid.append(`
-        <div class="project-card" data-position="${project.position}">
+        <div class="project-card" data-position="${project.position}" data-id="${project.id}">
           <div class="project-card-header">
             <h3>${project.title}</h3>
             <span class="position-badge">${project.position}</span>
@@ -61,21 +149,96 @@ $(document).ready(function() {
           <p>${project.description}</p>
           <div class="project-skills">${skillBadges}</div>
           <div class="project-links">
-            <a href="${project.github}" target="_blank">View on GitHub</a>
-            ${demoLink}
+            <button class="btn btn-details" data-project-id="${project.id}">View Details</button>
           </div>
         </div>
       `);
+    });
+
+    // Attach click handlers to detail buttons
+    $('.btn-details').on('click', function() {
+      const projectId = $(this).data('project-id');
+      const project = allProjects.find(p => p.id == projectId);
+      if (project) {
+        openProjectModal(project);
+      }
+    });
+  }
+
+  function openProjectModal(project) {
+    currentProjectImages = project.images || [];
+    currentImageIndex = 0;
+
+    $modalTitle.text(project.title);
+    $modalPosition.text(project.position).removeClass('fullstack frontend backend').addClass(project.position);
+    $modalDescription.text(project.longDescription || project.description);
+    $modalGithubLink.attr('href', project.github);
+
+    const skillBadges = project.skills
+      .map(skill => `<span class="skill-badge">${skill}</span>`)
+      .join(' ');
+    $modalSkills.html(skillBadges);
+
+    if (currentProjectImages.length > 0) {
+      updateModalImage();
+      $totalImages.text(currentProjectImages.length);
+    }
+
+    $modal.addClass('active');
+  }
+
+  function updateModalImage() {
+    if (currentProjectImages.length === 0) return;
+    $modalImage.attr('src', currentProjectImages[currentImageIndex]);
+    $currentImage.text(currentImageIndex + 1);
+  }
+
+  function closeProjectModal() {
+    $modal.removeClass('active');
+  }
+
+  function setupEventListeners() {
+    $positionFilter.on('change', filterProjects);
+    $skillFilter.on('change', filterProjects);
+
+    $modalClose.on('click', closeProjectModal);
+    $modalOverlay.on('click', closeProjectModal);
+
+    $prevBtn.on('click', function() {
+      if (currentImageIndex > 0) {
+        currentImageIndex--;
+        updateModalImage();
+      }
+    });
+
+    $nextBtn.on('click', function() {
+      if (currentImageIndex < currentProjectImages.length - 1) {
+        currentImageIndex++;
+        updateModalImage();
+      }
+    });
+
+    // Keyboard navigation
+    $(document).on('keydown', function(e) {
+      if (!$modal.hasClass('active')) return;
+      if (e.key === 'ArrowLeft') $prevBtn.click();
+      if (e.key === 'ArrowRight') $nextBtn.click();
+      if (e.key === 'Escape') closeProjectModal();
     });
   }
 
   function filterProjects() {
     const selectedPosition = $positionFilter.val();
-    const selectedSkill = $skillFilter.val();
+    const selectedSkills = $skillFilter.val() || [];
 
     const filtered = allProjects.filter(project => {
       const positionMatch = !selectedPosition || project.position === selectedPosition;
-      const skillMatch = !selectedSkill || project.skills.includes(selectedSkill);
+      
+      let skillMatch = true;
+      if (selectedSkills.length > 0) {
+        skillMatch = selectedSkills.some(skill => project.skills.includes(skill));
+      }
+      
       return positionMatch && skillMatch;
     });
 
@@ -88,3 +251,4 @@ $(document).ready(function() {
       $projectsGrid.html('<p class="no-results">Unable to load project data.</p>');
     });
 });
+
