@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   let allProjects = [];
   let allSkillsFlat = [];
   let currentImageIndex = 0;
@@ -24,10 +24,10 @@ $(document).ready(function() {
 
   function init(data) {
     allProjects = data.projects;
-    
+
     // Flatten skills for filter
     flattenSkills(data.skills);
-    
+
     renderSkillsSection(data.skills);
     populateSkillFilter(data.skills);
     renderProjects(allProjects);
@@ -38,15 +38,12 @@ $(document).ready(function() {
   function flattenSkills(skillsObj) {
     allSkillsFlat = [];
     for (const category in skillsObj) {
-      const categoryObj = skillsObj[category];
-      for (const subcategory in categoryObj) {
-        const items = categoryObj[subcategory];
-        if (Array.isArray(items)) {
-          allSkillsFlat.push(...items);
-        } else {
-          for (const level in items) {
-            allSkillsFlat.push(...items[level]);
-          }
+      const items = skillsObj[category];
+      if (Array.isArray(items)) {
+        allSkillsFlat.push(...items);
+      } else {
+        for (const level in items) {
+          allSkillsFlat.push(...items[level]);
         }
       }
     }
@@ -55,53 +52,43 @@ $(document).ready(function() {
 
   function renderSkillsSection(skillsObj) {
     $skillsContainer.empty();
-    
+
     for (const category in skillsObj) {
       const categoryObj = skillsObj[category];
       const $categoryDiv = $(`<div class="skill-category"></div>`);
       const $categoryTitle = $(`<h3 class="skill-category-title">${category}</h3>`);
       $categoryDiv.append($categoryTitle);
 
-      for (const subcategory in categoryObj) {
-        const items = categoryObj[subcategory];
-        const $subcategoryDiv = $(`<div class="skill-subcategory"></div>`);
-        const $subcategoryTitle = $(`<h4 class="skill-subcategory-title">${subcategory}</h4>`);
-        $subcategoryDiv.append($subcategoryTitle);
-
-        if (Array.isArray(items)) {
-          // Direct array of skills
+      if (Array.isArray(categoryObj)) {
+        // Direct array of skills
+        const $skillsList = $(`<ul class="skill-items"></ul>`);
+        categoryObj.forEach(skill => {
+          $skillsList.append(`<li>${skill}</li>`);
+        });
+        $categoryDiv.append($skillsList);
+      } else {
+        // Object with proficiency levels
+        for (const level in categoryObj) {
+          const $levelDiv = $(`<div class="skill-level"></div>`);
+          const $levelLabel = $(`<span class="skill-level-label">${level}:</span>`);
           const $skillsList = $(`<ul class="skill-items"></ul>`);
-          items.forEach(skill => {
+
+          categoryObj[level].forEach(skill => {
             $skillsList.append(`<li>${skill}</li>`);
           });
-          $subcategoryDiv.append($skillsList);
-        } else {
-          // Object with proficiency levels
-          for (const level in items) {
-            const $levelDiv = $(`<div class="skill-level"></div>`);
-            const $levelLabel = $(`<span class="skill-level-label">${level}:</span>`);
-            const $skillsList = $(`<ul class="skill-items"></ul>`);
-            
-            items[level].forEach(skill => {
-              $skillsList.append(`<li>${skill}</li>`);
-            });
-            
-            $levelDiv.append($levelLabel);
-            $levelDiv.append($skillsList);
-            $subcategoryDiv.append($levelDiv);
-          }
+
+          $levelDiv.append($levelLabel);
+          $levelDiv.append($skillsList);
+          $categoryDiv.append($levelDiv);
         }
-
-        $categoryDiv.append($subcategoryDiv);
       }
-
       $skillsContainer.append($categoryDiv);
     }
   }
 
   function populateSkillFilter(skillsObj) {
     $skillFilter.find('optgroup').remove();
-    
+
     for (const category in skillsObj) {
       const categoryObj = skillsObj[category];
       const $optgroup = $(`<optgroup label="${category}"></optgroup>`);
@@ -125,6 +112,12 @@ $(document).ready(function() {
 
       $skillFilter.append($optgroup);
     }
+
+    $skillFilter.select2({
+      placeholder: 'Select skills',
+      width: '250px',
+      allowClear: true
+    });
   }
 
   function renderProjects(projects) {
@@ -156,7 +149,7 @@ $(document).ready(function() {
     });
 
     // Attach click handlers to detail buttons
-    $('.btn-details').on('click', function() {
+    $('.btn-details').on('click', function () {
       const projectId = $(this).data('project-id');
       const project = allProjects.find(p => p.id == projectId);
       if (project) {
@@ -204,14 +197,14 @@ $(document).ready(function() {
     $modalClose.on('click', closeProjectModal);
     $modalOverlay.on('click', closeProjectModal);
 
-    $prevBtn.on('click', function() {
+    $prevBtn.on('click', function () {
       if (currentImageIndex > 0) {
         currentImageIndex--;
         updateModalImage();
       }
     });
 
-    $nextBtn.on('click', function() {
+    $nextBtn.on('click', function () {
       if (currentImageIndex < currentProjectImages.length - 1) {
         currentImageIndex++;
         updateModalImage();
@@ -219,7 +212,7 @@ $(document).ready(function() {
     });
 
     // Keyboard navigation
-    $(document).on('keydown', function(e) {
+    $(document).on('keydown', function (e) {
       if (!$modal.hasClass('active')) return;
       if (e.key === 'ArrowLeft') $prevBtn.click();
       if (e.key === 'ArrowRight') $nextBtn.click();
@@ -233,12 +226,12 @@ $(document).ready(function() {
 
     const filtered = allProjects.filter(project => {
       const positionMatch = !selectedPosition || project.position === selectedPosition;
-      
+
       let skillMatch = true;
       if (selectedSkills.length > 0) {
         skillMatch = selectedSkills.some(skill => project.skills.includes(skill));
       }
-      
+
       return positionMatch && skillMatch;
     });
 
@@ -247,7 +240,7 @@ $(document).ready(function() {
 
   $.getJSON('projects.json')
     .done(init)
-    .fail(function() {
+    .fail(function () {
       $projectsGrid.html('<p class="no-results">Unable to load project data.</p>');
     });
 });
