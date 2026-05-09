@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portofolio - Gani Eka Santoso Wijaya</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
   <!-- Header -->
@@ -38,13 +39,8 @@
   <section id="skills">
     <div class="container">
       <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>Node.js</li>
-        <li>Express.js</li>
-        <li>SQL Server</li>
-        <li>Next.js</li>
-        <li>PHP (CodeIgniter)</li>
-        <li>Git & GitHub</li>
+      <ul class="skills-list" id="skillsList">
+        <!-- Skills loaded from projects.json -->
       </ul>
     </div>
   </section>
@@ -53,15 +49,23 @@
   <section id="projects">
     <div class="container">
       <h2>Projects</h2>
-      <div class="project">
-        <h3>Sistem Antrian Poli</h3>
-        <p>Aplikasi web untuk mengatur antrian pasien dengan integrasi printer thermal.</p>
-        <a href="https://github.com/username/project-antrian" target="_blank">View on GitHub</a>
+      <div class="filter-controls">
+        <label for="positionFilter">Position:</label>
+        <select id="positionFilter">
+          <option value="">All Positions</option>
+          <option value="fullstack">Fullstack</option>
+          <option value="frontend">Frontend</option>
+          <option value="backend">Backend</option>
+        </select>
+
+        <label for="skillFilter">Skill:</label>
+        <select id="skillFilter">
+          <option value="">All Skills</option>
+        </select>
       </div>
-      <div class="project">
-        <h3>API Konversi Gambar ke Base64</h3>
-        <p>API sederhana untuk mengkonversi gambar menjadi base64 string.</p>
-        <a href="https://github.com/username/api-base64" target="_blank">View on GitHub</a>
+
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Populated from projects.json -->
       </div>
     </div>
   </section>
@@ -78,7 +82,8 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Nama Kamu. All rights reserved.</p>
+    <p>&copy; 2025 Gani Eka Santoso Wijaya. All rights reserved.</p>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>

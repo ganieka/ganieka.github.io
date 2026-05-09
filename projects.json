@@ -1,0 +1,77 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Sistem Antrian Poli",
+      "description": "Aplikasi web untuk mengatur antrian pasien dengan integrasi printer thermal.",
+      "position": "fullstack",
+      "skills": ["Node.js", "Express.js", "SQL Server", "Next.js", "Git & GitHub"],
+      "github": "https://github.com/username/project-antrian",
+      "demo": ""
+    },
+    {
+      "id": 2,
+      "title": "API Konversi Gambar ke Base64",
+      "description": "API sederhana untuk mengkonversi gambar menjadi base64 string.",
+      "position": "backend",
+      "skills": ["Node.js", "Express.js", "JavaScript", "REST API"],
+      "github": "https://github.com/username/api-base64",
+      "demo": ""
+    },
+    {
+      "id": 3,
+      "title": "TelkomProperty Responsive Web",
+      "description": "Frontend project built with Next.js and TailwindCSS for responsive SPA delivery.",
+      "position": "frontend",
+      "skills": ["Next.js", "TailwindCSS", "HTML5", "CSS", "JavaScript"],
+      "github": "https://github.com/username/telkomproperty-responsive",
+      "demo": ""
+    },
+    {
+      "id": 4,
+      "title": "Patient Survey & RSAJ Portal",
+      "description": "Fullstack portal for patient survey and hospital admission management.",
+      "position": "fullstack",
+      "skills": ["React.js", "Next.js", "Express.js", "SQL Server", "Git & GitHub"],
+      "github": "https://github.com/username/patient-survey-rsaj",
+      "demo": ""
+    },
+    {
+      "id": 5,
+      "title": "Doctor Lounge Mobile App",
+      "description": "Fullstack mobile app project using React Native and backend integration.",
+      "position": "fullstack",
+      "skills": ["React Native", "Next.js", "SQL Server", "Git & GitHub"],
+      "github": "https://github.com/username/doctor-lounge-app",
+      "demo": ""
+    }
+  ],
+  "skills": [
+    "JavaScript",
+    "PHP",
+    "SQL",
+    "TypeScript",
+    "Python",
+    "Go",
+    "Java",
+    "React.js",
+    "Next.js",
+    "CodeIgniter4",
+    "jQuery",
+    "React Native",
+    "Express.js",
+    "Electron",
+    "SQL Server",
+    "phpMyAdmin",
+    "MySQL",
+    "HTML5",
+    "CSS",
+    "IIS",
+    "Middleware",
+    "Axios",
+    "Git & GitHub",
+    "Expo",
+    "TailwindCSS",
+    "Vue.js"
+  ]
+}
