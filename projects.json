@@ -127,7 +127,131 @@
 				"asset/image/antrean-bona-display-antrean.png"
 			],
 			"view": {
-				"github": "https://github.com/username/repo"
+			}
+		},
+		{
+			"id": 7,
+			"title": "Logbook Keperawatan",
+			"description": "Nurse Daily Activity Logbook",
+			"longDescription": "Nurse can input their daily activity on each patient, with verification from each coordinator",
+			"position": "frontend, team",
+			"skills": [
+				"PHP",
+				"JavaScript",
+				"jQuery",
+				"IIS",
+				"CSS"
+			],
+			"images": [
+				"asset/image/logbook-keperawatan-list-shift.png",
+				"asset/image/logbook-keperawatan-input.png",
+				"asset/image/logbook-keperawatan-verify.png",
+				"asset/image/logbook-keperawatan-shifting.png",
+				"asset/image/logbook-keperawatan-link-competency.png",
+				"asset/image/logbook-keperawatan-unit-group.png"
+			],
+			"view": {
+				
+			}
+		},
+		{
+			"id": 8,
+			"title": "M-RSAJ",
+			"description": "Mobile Application for Atma Jaya Hospital",
+			"longDescription": "Mobile Apps with web app inside as each menu using webview",
+			"position": "frontend, individual",
+			"skills": [
+				"React Native",
+				"TypeScript",
+				"Expo",
+				"Axios"
+			],
+			"images": [
+				"asset/image/m-rsaj.jpeg"
+			],
+			"view": {
+				
+			}
+		},
+		{
+			"id": 9,
+			"title": "Medication Assist",
+			"description": "Menu inside m-rsaj to administer drug to patient",
+			"longDescription": "Scan nurse qr on id card and select/scan patient qr on wristband to set status given on drug",
+			"position": "frontend, team",
+			"skills": [
+				"JavaScript",
+				"jQuery",
+				"CodeIgniter4"
+			],
+			"images": [
+				"asset/image/medication-assist.png"
+			],
+			"view": {
+				
+			}
+		},
+		{
+			"id": 10,
+			"title": "Nurse Dailycare",
+			"description": "Desktop Application to monitor IV and Drug on each unit",
+			"longDescription": "Show patient list with IV and drug, with day to day status, late administer and nurse that administer",
+			"position": "frontend, team",
+			"skills": [
+				"Electron",
+				"JavaScript",
+				"Express.js"
+			],
+			"images": [
+				"https://via.placeholder.com/500x400?text=Screenshot1",
+				"https://via.placeholder.com/500x400?text=Screenshot2"
+			],
+			"view": {
+				
+			}
+		},
+		{
+			"id": 11,
+			"title": "Reorder Point",
+			"description": "Create item list to purchase based on item usage",
+			"longDescription": "Create item list to purchase based on item usage, integrating to Purchase Request and export to excel",
+			"position": "fullstack, individual",
+			"skills": [
+				"PHP",
+				"JavaScript",
+				"jQuery",
+				"CodeIgniter4",
+				"SQL",
+				"SQL Server",
+				"IIS"
+			],
+			"images": [
+				"asset/image/reorder-point.png"
+			],
+			"view": {
+				
+			}
+		},
+		{
+			"id": 12,
+			"title": "Sistem Pengampu",
+			"description": "System for Partnered Clinic to input their procedures on Stem Cell, which will be categorized by Verificator",
+			"longDescription": "System for Partnered Clinic to input their procedures on Stem Cell, which will be categorized by Verificator. Only procedures classified as research are charged fees. This system also have CMS, Invoice, and mailing system.",
+			"position": "frontend, team",
+			"skills": [
+				"PHP",
+				"JavaScript",
+				"CSS",
+				"jQuery",
+				"CodeIgniter4",
+				"IIS"
+			],
+			"images": [
+				"asset/image/sistem-pengampu-login.png",
+				""
+			],
+			"view": {
+				
 			}
 		}
 	],
@@ -139,7 +263,8 @@
 				"SQL"
 			],
 			"Intermediate": [
-				"TypeScript"
+				"TypeScript",
+				"Node.js"
 			],
 			"Beginner": [
 				"Python",
