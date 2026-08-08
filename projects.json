@@ -2,13 +2,14 @@
 	"projects": [
 		{
 			"id": 1,
-			"title": "Sistem Antrian Poli",
+			"title": "Antraan BPJS",
 			"description": "Aplikasi web untuk mengatur antrian pasien dengan integrasi printer thermal dan real-time queue management system.",
 			"longDescription": "Developed a comprehensive queue management system for hospital polyclinics. Features include real-time patient queue tracking, thermal printer integration for queue tickets, and dashboard for staff monitoring. Implemented with responsive design for various devices.",
-			"position": "fullstack",
+			"position": "frontend, team",
 			"skills": [
 				"JavaScript",
 				"Express.js",
+				"SQL",
 				"SQL Server",
 				"Next.js"
 			],
@@ -17,14 +18,16 @@
 				"https://via.placeholder.com/500x400?text=Patient+Queue+Screen",
 				"https://via.placeholder.com/500x400?text=Admin+Panel"
 			],
-			"github": "https://github.com/username/project-antrian"
+			"view": {
+				"github": "https://github.com/username/project-antrian"
+			}
 		},
 		{
 			"id": 2,
-			"title": "API Konversi Gambar ke Base64",
+			"title": "Tools Image Converter to Base64",
 			"description": "RESTful API untuk mengkonversi gambar menjadi base64 string dengan validasi dan error handling.",
 			"longDescription": "Built a lightweight Node.js API that handles image conversion to base64 format. Includes file validation, error handling, and support for multiple image formats. Optimized for performance and scalability.",
-			"position": "backend",
+			"position": "backend, individual",
 			"skills": [
 				"JavaScript",
 				"Express.js"
@@ -34,14 +37,16 @@
 				"https://via.placeholder.com/500x400?text=Postman+Testing",
 				"https://via.placeholder.com/500x400?text=API+Response"
 			],
-			"github": "https://github.com/username/api-base64"
+			"view": {
+				"github": "https://github.com/username/api-base64"
+			}
 		},
 		{
 			"id": 3,
 			"title": "TelkomProperty Responsive Web",
 			"description": "Frontend project built with Next.js and TailwindCSS for responsive property listing SPA.",
 			"longDescription": "Created a responsive single-page application for property listings. Implemented with Next.js for server-side rendering and TailwindCSS for modern styling. Responsive across all device sizes with smooth animations.",
-			"position": "frontend",
+			"position": "frontend, team",
 			"skills": [
 				"JavaScript",
 				"React.js",
@@ -54,18 +59,21 @@
 				"https://via.placeholder.com/500x400?text=Property+Details",
 				"https://via.placeholder.com/500x400?text=Mobile+View"
 			],
-			"github": "https://github.com/username/telkomproperty-responsive"
+			"view": {
+				"github": "https://github.com/username/telkomproperty-responsive"
+			}
 		},
 		{
 			"id": 4,
 			"title": "Patient Survey & RSAJ Portal",
 			"description": "Fullstack portal untuk survey pasien dan manajemen admisi rumah sakit RSAJ.",
 			"longDescription": "Developed a comprehensive hospital patient portal with survey system and admission management. Features include patient registration, survey forms, appointment scheduling, and admin dashboard for staff management.",
-			"position": "fullstack",
+			"position": "fullstack, individual",
 			"skills": [
 				"JavaScript",
 				"React.js",
 				"Next.js",
+				"SQL",
 				"SQL Server"
 			],
 			"images": [
@@ -73,18 +81,21 @@
 				"https://via.placeholder.com/500x400?text=Survey+Form",
 				"https://via.placeholder.com/500x400?text=Admin+Dashboard"
 			],
-			"github": "https://github.com/username/patient-survey-rsaj"
+			"view": {
+				"github": "https://github.com/username/patient-survey-rsaj"
+			}
 		},
 		{
 			"id": 5,
 			"title": "Doctor Lounge Mobile App",
 			"description": "Mobile application untuk doctor lounge dengan integrasi backend dan real-time features.",
 			"longDescription": "Built a cross-platform mobile app using React Native for doctors' workspace. Includes real-time notifications, messaging system, schedule management, and integration with hospital backend systems.",
-			"position": "fullstack",
+			"position": "fullstack, individual",
 			"skills": [
 				"JavaScript",
 				"React Native",
 				"Next.js",
+				"SQL",
 				"SQL Server"
 			],
 			"images": [
@@ -92,7 +103,32 @@
 				"https://via.placeholder.com/500x400?text=Schedule+Management",
 				"https://via.placeholder.com/500x400?text=Messaging+Screen"
 			],
-			"github": "https://github.com/username/doctor-lounge-app"
+			"view": {
+				"github": "https://github.com/username/doctor-lounge-app"
+			}
+		},
+		{
+			"id": 6,
+			"title": "Antrean Bona",
+			"description": "Print Queue Number, Calling, and Scan QR for Payment Queue with Kiosk integration.",
+			"longDescription": "This is an application to support 3rd Floor Registration team for queuing with Kiosk on site to print queue number and scan QR to queue payment line after registration and healthcare service given.",
+			"position": "fullstack, individual",
+			"skills": [
+				"PHP",
+				"JavaScript",
+				"SQL",
+				"SQL Server",
+				"CodeIgniter4",
+				"IIS"
+			],
+			"images": [
+				"asset/image/antrean-bona-ambil-antrean.png",
+				"asset/image/antrean-bona-panggil-antrean.png",
+				"asset/image/antrean-bona-display-antrean.png"
+			],
+			"view": {
+				"github": "https://github.com/username/repo"
+			}
 		}
 	],
 	"skills": {

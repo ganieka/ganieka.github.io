@@ -20,6 +20,7 @@ $(document).ready(function () {
   const $modalPosition = $('#modalPosition');
   const $modalSkills = $('#modalSkills');
   const $modalDescription = $('#modalDescription');
+  const $modalActions = $('#modalActions');
   const $modalGithubLink = $('#modalGithubLink');
 
   function init(data) {
@@ -93,21 +94,16 @@ $(document).ready(function () {
       const categoryObj = skillsObj[category];
       const $optgroup = $(`<optgroup label="${category}"></optgroup>`);
 
-      for (const subcategory in categoryObj) {
-        const items = categoryObj[subcategory];
-        let skills = [];
-
-        if (Array.isArray(items)) {
-          skills = items;
-        } else {
-          for (const level in items) {
-            skills.push(...items[level]);
-          }
-        }
-
-        skills.forEach(skill => {
+      if (Array.isArray(categoryObj)) {
+        categoryObj.forEach(skill => {
           $optgroup.append(`<option value="${skill}">${skill}</option>`);
         });
+      } else {
+        for (const level in categoryObj) {
+          categoryObj[level].forEach(skill => {
+            $optgroup.append(`<option value="${skill}">${skill}</option>`);
+          });
+        }
       }
 
       $skillFilter.append($optgroup);
@@ -157,7 +153,7 @@ $(document).ready(function () {
       }
     });
   }
-
+  
   function openProjectModal(project) {
     currentProjectImages = project.images || [];
     currentImageIndex = 0;
@@ -165,7 +161,14 @@ $(document).ready(function () {
     $modalTitle.text(project.title);
     $modalPosition.text(project.position).removeClass('fullstack frontend backend').addClass(project.position);
     $modalDescription.text(project.longDescription || project.description);
-    $modalGithubLink.attr('href', project.github);
+    $modalActions.empty();
+
+    if (project.view && Object.keys(project.view).length > 0) {
+      Object.entries(project.view).forEach(([key, url]) => {
+        const linkText = key.charAt(0).toUpperCase() + key.slice(1); // Capitalize first letter
+        $modalActions.append(`<a href="${url}" target="_blank" class="btn btn-primary">View on ${linkText}</a>`);
+      });
+    }
 
     const skillBadges = project.skills
       .map(skill => `<span class="skill-badge">${skill}</span>`)
@@ -224,12 +227,15 @@ $(document).ready(function () {
     const selectedPosition = $positionFilter.val();
     const selectedSkills = $skillFilter.val() || [];
 
+    // console.log('Selected Position:', selectedPosition);
+    // console.log('Selected Skills:', selectedSkills);
+
     const filtered = allProjects.filter(project => {
       const positionMatch = !selectedPosition || project.position === selectedPosition;
-
       let skillMatch = true;
       if (selectedSkills.length > 0) {
-        skillMatch = selectedSkills.some(skill => project.skills.includes(skill));
+        skillMatch = selectedSkills.every(skill => project.skills.includes(skill));
+        console.log("skillMatch:", skillMatch);
       }
 
       return positionMatch && skillMatch;
