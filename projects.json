@@ -185,7 +185,9 @@
 				"CodeIgniter4"
 			],
 			"images": [
-				"asset/image/medication-assist.png"
+				"asset/image/medication-assist.png",
+				"asset/image/medication-assist-list-patient.png",
+				"asset/image/medication-assist-give-medication.png"
 			],
 			"view": {
 				
@@ -248,7 +250,10 @@
 			],
 			"images": [
 				"asset/image/sistem-pengampu-login.png",
-				""
+				"asset/image/sistem-pengampu-list-transaksi.png",
+				"asset/image/sistem-pengampu-approval-transaksi.png",
+				"asset/image/sistem-pengampu-data-users.png",
+				"asset/image/sistem-pengampu-report.png"
 			],
 			"view": {
 				
