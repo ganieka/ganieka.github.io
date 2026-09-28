@@ -22,7 +22,9 @@
       "position": "frontend, team",
       "skills": ["JavaScript", "React.js", "Next.js", "HTML5", "CSS"],
       "images": [],
-      "view": {}
+      "view": {
+				"web": "https://telprodico.telkomproperty.co.id/"
+			}
     },
     {
       "id": 4,
