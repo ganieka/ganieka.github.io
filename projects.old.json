@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "id": 2,
+      "title": "Tools Image Converter to Base64",
+      "description": "RESTful API untuk mengkonversi gambar menjadi base64 string dengan validasi dan error handling.",
+      "longDescription": "Built a lightweight Node.js API that handles image conversion to base64 format. Includes file validation, error handling, and support for multiple image formats. Optimized for performance and scalability.",
+      "position": "backend, individual",
+      "skills": ["JavaScript", "Express.js"],
+      "images": [
+        "https://via.placeholder.com/500x400?text=API+Documentation",
+        "https://via.placeholder.com/500x400?text=Postman+Testing",
+        "https://via.placeholder.com/500x400?text=API+Response"
+      ],
+      "view": {
+        "github": "https://github.com/username/api-base64"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Doctor Lounge Mobile App",
+      "description": "Mobile application untuk doctor lounge dengan integrasi backend dan real-time features.",
+      "longDescription": "Built a cross-platform mobile app using React Native for doctors' workspace. Includes real-time notifications, messaging system, schedule management, and integration with hospital backend systems.",
+      "position": "fullstack, individual",
+      "skills": ["JavaScript", "React Native", "Next.js", "SQL", "SQL Server"],
+      "images": [
+        "https://via.placeholder.com/500x400?text=App+Home+Screen",
+        "https://via.placeholder.com/500x400?text=Schedule+Management",
+        "https://via.placeholder.com/500x400?text=Messaging+Screen"
+      ],
+      "view": {
+        "github": "https://github.com/username/doctor-lounge-app"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Patient Survey & RSAJ Portal",
+      "description": "Fullstack portal untuk survey pasien dan manajemen admisi rumah sakit RSAJ.",
+      "longDescription": "Developed a comprehensive hospital patient portal with survey system and admission management. Features include patient registration, survey forms, appointment scheduling, and admin dashboard for staff management.",
+      "position": "fullstack, individual",
+      "skills": ["JavaScript", "React.js", "Next.js", "SQL", "SQL Server"],
+      "images": [
+        "https://via.placeholder.com/500x400?text=Patient+Portal+Home",
+        "https://via.placeholder.com/500x400?text=Survey+Form",
+        "https://via.placeholder.com/500x400?text=Admin+Dashboard"
+      ],
+      "view": {
+        "github": "https://github.com/username/patient-survey-rsaj"
+      }
+    }
+  ]
+}
