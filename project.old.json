@@ -1,0 +1,19 @@
+{
+  "id": 2,
+  "title": "Tools Image Converter to Base64",
+  "description": "RESTful API untuk mengkonversi gambar menjadi base64 string dengan validasi dan error handling.",
+  "longDescription": "Built a lightweight Node.js API that handles image conversion to base64 format. Includes file validation, error handling, and support for multiple image formats. Optimized for performance and scalability.",
+  "position": "backend, individual",
+  "skills": [
+    "JavaScript",
+    "Express.js"
+  ],
+  "images": [
+    "https://via.placeholder.com/500x400?text=API+Documentation",
+    "https://via.placeholder.com/500x400?text=Postman+Testing",
+    "https://via.placeholder.com/500x400?text=API+Response"
+  ],
+  "view": {
+    "github": "https://github.com/username/api-base64"
+  }
+},

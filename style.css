@@ -17,6 +17,7 @@ header .profile-pic {
   width: 120px;
   height: 120px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 header h1 {
@@ -332,7 +333,7 @@ footer {
 
 .modal-image-container {
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: center;
   flex: 1;
   flex-direction: column;
@@ -433,6 +434,34 @@ footer {
   margin-top: 2rem;
 }
 
+.wa-float {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 40;
+  background: #22c55e;
+  color: white;
+  padding: 16px;
+  border-radius: 9999;
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+    0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.wa-float:hover {
+  background-color: rgb(22 163 74);
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .modal-body {
@@ -440,39 +469,39 @@ footer {
     padding: 1.5rem;
     gap: 1.5rem;
   }
-  
+
   .modal-image {
     max-height: 350px;
   }
-  
+
   .carousel-btn {
     width: 40px;
     height: 40px;
     font-size: 20px;
   }
-  
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .filter-controls {
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .filter-controls select {
     width: 100%;
   }
-  
+
   .skill-level {
     flex-direction: column;
     gap: 0.3rem;
   }
-  
+
   .skill-level-label {
     min-width: auto;
   }
-  
+
   section {
     max-width: 100%;
   }
@@ -483,23 +512,23 @@ footer {
     width: 95vw;
     max-height: 95vh;
   }
-  
+
   .modal-close {
     top: 10px;
     right: 10px;
   }
-  
+
   .carousel-btn {
     width: 35px;
     height: 35px;
     font-size: 18px;
   }
-  
+
   .project-card-header {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .filter-controls label {
     margin-bottom: 0.3rem;
   }
